@@ -1,0 +1,27 @@
+
+# --- Deployment ---
+modal>=0.64.0
+
+# --- API testing ---
+requests>=2.31.0
+
+# --- Utilities ---
+huggingface_hub>=0.23.0
+python-dotenv>=1.0.0
+
+# Training dependencies (Lightning AI / local only)
+# Do not install in production. Use install.sh instead.
+# torch>=2.3.0
+# unsloth @ git+https://github.com/unslothai/unsloth.git
+# unsloth_zoo
+# transformers>=4.40.0
+# datasets>=2.19.0
+# peft==0.10.0
+# trl==0.8.6
+# accelerate==0.29.3
+# bitsandbytes>=0.43.0
+# xformers
+# tyro>=0.5.11
+# einops
+# sentencepiece
+# protobuf

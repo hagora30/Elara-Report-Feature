@@ -1,0 +1,110 @@
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.gguf
+*.ggml
+*.mlmodel
+*.ot
+
+# --- Model and adapter directories ---
+qwen14b-lora-out/
+elara-14b-merged/
+*-lora-out/
+*-merged/
+/model/
+models/
+checkpoints/
+checkpoint-*/
+
+# --- Secrets and credentials ---
+.env
+.env.*
+.envrc
+secrets.json
+secrets.yaml
+secrets.toml
+*.token
+hf_token*
+modal_token*
+*_secret*
+
+# --- Modal ---
+.modal/
+modal.toml
+
+# --- HuggingFace cache ---
+.cache/
+hub/
+
+# --- Datasets (large files ) ---
+*.jsonl
+data/
+datasets/
+train.jsonl
+validation.jsonl
+master.jsonl
+cleaned_master (1).jsonl
+ELARA_REPORT_Algebra.jsonl
+ELARA_REPORT_calc.jsonl
+ELARA_REPORT_EN.jsonl
+arabic_report.jsonl
+chemistry_statistic.jsonl
+biology_report.jsonl
+PHYSICS_REPORT (1).jsonl
+
+
+
+# --- Test outputs ---
+report_output.txt
+output/
+outputs/
+results/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# --- Jupyter (use .py scripts for reproducibility) ---
+.ipynb_checkpoints/
+*.ipynb
+
+# --- Logs ---
+*.log
+logs/
+runs/
+wandb/
+tensorboard/
+
+# --- OS ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
