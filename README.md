@@ -17,41 +17,6 @@ The model is built upon Qwen2.5-14B-Instruct and fine-tuned using parameter-effi
 
 The system is deployed as a serverless inference endpoint on Modal, powered by vLLM for high-throughput generation, and enforces strict JSON output via guided decoding.
 
-## System Architecture
-
-    +-------------------------------------------------------------+
-    |                        CLIENT LAYER                         |
-    |         (EdTech Platform / LMS / Research Dashboard)        |
-    +---------------------+---------------------------------------+
-                          |  HTTPS POST  { transcript }
-                          v
-    +-------------------------------------------------------------+
-    |                    MODAL SERVERLESS LAYER                   |
-    |                                                             |
-    |   +-----------------------------------------------------+   |
-    |   |                ElaraModel Container                 |   |
-    |   |                                                     |   |
-    |   |   +-------------------------------------------+     |   |
-    |   |   |           vLLM AsyncLLMEngine             |     |   |
-    |   |   |                                           |     |   |
-    |   |   |   +-----------------------------------+   |     |   |
-    |   |   |   |   Elara-14B-Merged (bfloat16)     |   |     |   |
-    |   |   |   |   Qwen2.5-14B + LoRA (rank 64)    |   |     |   |
-    |   |   |   +-----------------------------------+   |     |   |
-    |   |   |                                           |     |   |
-    |   |   |   Guided JSON Decoding (Outlines)         |     |   |
-    |   |   +-------------------------------------------+     |   |
-    |   |                                                     |   |
-    |   |   GPU: NVIDIA A100 40GB                             |   |
-    |   |   Scale-to-zero: 60s idle timeout                   |   |
-    |   +-----------------------------------------------------+   |
-    +---------------------+---------------------------------------+
-                          |  JSON  { report, usage }
-                          v
-    +-------------------------------------------------------------+
-    |                       RESPONSE LAYER                        |
-    |          Schema-validated structured ELARA report           |
-    +-------------------------------------------------------------+
 
 ## Training Pipeline
 
